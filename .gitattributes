@@ -1,2 +1,46 @@
 # Auto detect text files and perform LF normalization
-* text=auto
+* text
+
+<div class="breadcrumb_text">
+      <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">{{ 'general.breadcrumbs.home' | t }}</span></a></span> 
+      &nbsp; / &nbsp;
+      <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+        {% if collection %}
+          <a href="{{ collection.url }}" title="{{ collection.title | escape }}">{{ collection.title }}</a>
+        {% else %}
+          <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>     
+        {% endif %}
+      </span>
+      &nbsp; / &nbsp; 
+      {{ product.title }}
+    </div>
+
+
+<!-- ------------------------------------------------------------- Product Review form  --> 
+ <div class="yotpo bottomLine"
+data-appkey="PL7dHtqeP3YmccCBYZQVoNTpq1EuJkyItFbMS8FN"
+data-domain="{{ shop.permanent_domain | escape }}"
+data-product-id="{{ product.id }}"
+data-product-models="{{ product.id }}"
+data-name="{{ product.title | escape }}"
+data-url="{{ page.url }}"
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+data-description="{{ product.description | escape }}"
+data-bread-crumbs="{% for tag in product.tags %}{{ tag | escape }};{% endfor %}">
+</div>      
+<!-- ------------------------------------------------------------- Product Review form  -->
+    
+<!-- ------------------------------------------------------------- Product Review form  -->      
+<div class="yotpo yotpo-main-widget"
+    data-product-id="{{ product.id }}"
+    data-name="{{ product.title | escape }}"
+    data-url="{{ shop.url }}{{ product.url }}"
+    data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+    data-description="{{ product.description | escape }}">
+</div>    
+<!-- ------------------------------------------------------------- Product Review form  -->
+
+<script type="text/javascript">
+(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/PL7dHtqeP3YmccCBYZQVoNTpq1EuJkyItFbMS8FN/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+
