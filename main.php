@@ -163,7 +163,7 @@ echo "<script>parent.location.href='https://www.ndiatech.com/apps/videoportico/m
         if($value=='accepted')
         {
         $update= mysqli_query($conn,"UPDATE  `app_data_tbl` SET  `charge_status` = 'accepted',  `confirm_url` =  '$confirmation_url' WHERE `shop_address` =  '$shop_name'");
-echo "<script>parent.location.href='https://www.ndiatech.com/apps/videoportico/main.php?shop=$shop_name&token=$shop_token'</script>";
+echo "<script>parent.location.href='https://www.nn.com/apps/po/main.php?shop=$shop_name&token=$shop_token'</script>";
         }
         elseif($value=='pending')
         {
@@ -342,7 +342,7 @@ echo "<script>parent.location.href='https://www.ndiatech.com/apps/videoportico/m
 
   <script type="text/javascript">
   ShopifyApp.init({
-    apiKey: '5f3265f5e0f39bd7777e3978cd9758ec',
+    apiKey: '',
     shopOrigin: 'https://<?php echo $shop_name;?>'
   });
 
