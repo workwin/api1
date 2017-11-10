@@ -2,10 +2,10 @@
 
     require 'shopify.php';
    // include "dbcon.php";
-	$conn=mysqli_connect("localhost","ndiatech_1","Sakalsiddhi1111@","ndia_video")or die("sorry! No server not found");
+	
     /* Define your APP`s key and secret*/
-    define('SHOPIFY_API_KEY','5f3265f5e0f39bd7777e3978cd9758ec');
-    define('SHOPIFY_SECRET','e8144dd6f5033a418f06d7fa62b81985');
+    define('SHOPIFY_API_KEY','');
+    define('SHOPIFY_SECRET','');
     /* Define requested scope (access rights) - checkout https://docs.shopify.com/api/authentication/oauth#scopes   */
     define('SHOPIFY_SCOPE','read_script_tags,write_script_tags,write_themes,read_content, write_content');
 

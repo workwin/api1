@@ -4,9 +4,9 @@ $query_params['shop'] = $_GET['shop'];
 $shop_name=$_SESSION['shopname'];
 echo $shop_name;
 //include "dbcon.php";
-$conn=mysqli_connect("localhost","ndiatech_1","Sakalsiddhi1111@","ndia_video")or die("sorry! No server not found");
-//define('SHOPIFY_API_KEY','5f3265f5e0f39bd7777e3978cd9758ec');
- //   define('SHOPIFY_SECRET','e8144dd6f5033a418f06d7fa62b81985');
+$conn=mysqli_connect("localhost","","","")or die("sorry! No server not found");
+//define('SHOPIFY_API_KEY','');
+ //   define('SHOPIFY_SECRET','');
  ?>
  <div class="full-width">
 <?php

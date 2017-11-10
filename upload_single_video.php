@@ -2,7 +2,7 @@
 session_set_cookie_params(86400);
 ini_set('session.gc_maxlifetime', 86400);
 session_start(); 
-$conn=mysqli_connect("localhost","ndiatech_1","Sakalsiddhi1111@","ndia_video")or die("sorry! No server not found");
+
 //$query_params['shop'] = $_GET['shop'];
 $shop_name=$_SESSION['shopname'];
 

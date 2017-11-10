@@ -16,7 +16,7 @@
 
   <script type="text/javascript">
   ShopifyApp.init({
-     apiKey: '5f3265f5e0f39bd7777e3978cd9758ec',
+     apiKey: '',
     shopOrigin: 'https://<?php echo $shop_name;?>'
   });
 
