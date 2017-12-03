@@ -1,0 +1,167 @@
+<div id="page" class="row">
+  
+  <div class="contact-page">
+    <h1>{{ page.title }}</h1>
+    
+<div class="info-text">
+<span class="left"> You can send a message to us using the form below. </span>
+<span class="right"> * indicates a requires field </span>
+</div>
+    
+    <div class="page-with-contact-form">
+      <!--{{ page.content }} -->
+            
+        {% form 'contact' %}
+        {% if form.posted_successfully? %}
+        <div class="successForm feedback">
+          <p>{{ 'contact.form.post_success' | t }}</p>
+        </div>
+        {% endif %}
+
+        {% if form.errors %}
+        <div class="errorForm feedback">
+          <p>{{ 'contact.form.post_error' | t }}</p>
+          {% for field in form.errors %}
+            <p>{{ 'contact.form.post_field_error_html' | t: field: field, error: form.errors.messages[field] }}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div id="contactFormWrapper">
+          
+           <p>
+            <label>{{ 'contact.form.title' | t }}:<span class="req">*</span></label>
+             <select id="contactFormTitle" name="contact[title]" required="required">
+               <option value="Mr.">Mr.</option>
+               <option value="Mrs.">Mrs.</option>
+               <option value="Ms.">Ms.</option></select>
+          </p>
+          
+          <p>
+            <label>{{ 'contact.form.first_name' | t }}:<span class="req">*</span></label>
+            <input type="text" id="contactFormName" name="contact[first_name]" placeholder="" required="required"/>
+          </p>
+          
+            <p>
+            <label>{{ 'contact.form.last_name' | t }}:<span class="req">*</span></label>
+            <input type="text" id="contactFormName" name="contact[last_name]" placeholder="" required="required"/>
+          </p>
+          <p>
+            
+         <p>
+            <label>{{ 'contact.form.company' | t }}:</label>
+            <input type="text" id="contactFormCompany" name="contact[company]" placeholder="" />
+          </p>
+          <p>
+               <p>
+            <label>{{ 'contact.form.address' | t }}:</label>
+                 <textarea id="contactFormAddress" name="contact[address]" placeholder="" ></textarea>
+          </p>
+          <p>
+          <p>
+            <label>{{ 'contact.form.city' | t }}:</label>
+            <input type="text" id="contactFormCity" name="contact[city]" placeholder=""/>
+          </p>
+          
+            <p>
+            <label>State & Zip:</label>
+          <select id="contactFormState" name="contact[state]">
+           
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DE">DE</option>
+            <option value="DC">DC</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="ID">ID</option>
+            <option value="IA">IA</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VA">VA</option><option value="VT">VT</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option>
+            <option value="WY">WY</option>
+            
+            
+              </select>
+            <input type="text" id="contactFormZip" name="contact[zip]" placeholder=""/>
+          </p>
+          
+          <p>
+            <label>{{ 'contact.form.country' | t }}:</label>
+            <input type="text" id="contactFormCountry" name="contact[country]" placeholder=""/>
+          </p>
+          <p>
+            <label>{{ 'contact.form.phone' | t }}:</label>
+            <input type="telephone" id="contactFormTelephone" name="contact[phone]" placeholder="" />
+          </p>
+          
+          <p>
+            
+            <label>{{ 'contact.form.email' | t }}:<span class="req">*</span></label>
+            <input type="email" id="contactFormEmail" name="contact[email]" placeholder="" required="required" />
+          </p>
+          
+          <p>
+            <label>{{ 'contact.form.department' | t }}:<span class="req">*</span></label>
+            <select id="contactFormDepartment" name="contact[department]" placeholder="" required="required">
+              <option value="All">All</option>
+              <option value="Website">Website</option>
+              <option value="Press">Press</option>
+              <option value="Wholesale">Wholesale</option>
+            </select>
+          </p>
+           <p>
+            <label>{{ 'contact.form.subject' | t }}:<span class="req">*</span></label>
+            <input type="text" id="contactFormSubject" name="contact[subject]" placeholder="" required="required"/>
+          </p>
+          
+           
+          <p>
+            <label>{{ 'contact.form.message' | t }}:<span class="req">*</span></label>
+            <textarea rows="15" cols="75" id="contactFormMessage" name="contact[message]" placeholder=""></textarea>
+          </p>
+          <p>
+             <label></label>
+            <input type="submit" id="contactFormSubmit" value="Submit" class="btn" />
+          </p>
+        </div>
+        {% endform %}
+      
+    </div>
+ <div class="contact-info">
+      <div class="contact-info-inner">
+      <h4> Corporate Office </h4>
+
+303 Fifth Avenue, Suite 1706<br/>
+
+New York, NY 10016<br/>
+
+Tel: (212) 253 5688<br/>
+
+Fax: (212) 401 4338<br/>
+
+(not open to the public)<br/><br/>
+ 
+ 
+
+      <h4>Email:</h4>
+
+      Customer Service: <a href="mailto:customercare@rosenasammi.com">customercare@rosenasammi.com</a><br/>
+
+      Wholesale Inquiries: <a href="mailto:customercare@rosenasammi.com">wholesale@rosenasammi.com</a><br/>
+
+      Press Inquiries:<a href="mailto:customercare@rosenasammi.com">liz@mariposa-communications.com</a><br/>
+
+    </div>
+    
+    </div> 
+  </div>
+  
+</div>
+
+

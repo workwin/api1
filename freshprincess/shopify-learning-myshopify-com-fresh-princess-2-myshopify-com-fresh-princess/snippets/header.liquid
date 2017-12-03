@@ -1,0 +1,229 @@
+  
+
+    
+<!-- write script to toggle class on scroll -->
+<!-- <script>
+$(window).scroll(function() {
+	var my_css_class = {display:'none' };
+	var my_class={display:'block'};
+    if ($(this).scrollTop() > 1){  
+        $('header').addClass("sticky");
+		 $('header').removeClass("nonsticky");
+		$("div.sticky").css(my_css_class);
+		$("div.nonsticky").css(my_class);
+		 
+    }
+    else{
+        $('header').removeClass("sticky");
+		 $('header').addClass("nonsticky");
+		 $("div.nonsticky").css(my_css_class);
+		 $("div.sticky").css(my_class);
+    }
+});
+
+
+</script>
+
+-->
+<!-- Begin toolbar -->
+
+  <!-- <div class="sticky"> -->
+   
+  <div class="head_section wrapper">
+    <div class="toolbar clearfix">
+      <div id="header-top-part">
+      <div class = "head_left">
+        <div class="head_left_inner">
+      <div class = "top_head">
+        <p> {{settings.Shipping_content}}</p>
+      </div>
+      <div class = "account">
+        <div class="newsletter"> 
+       {%include 'newsletter-box'%} 
+        
+        </div><div class="toolbar-customer"><a href="/account">My Account</a><i class="fa  fa-angle-down"></i></div>
+      </div>
+        </div>
+        
+        
+          <li id="menu-toggle" class="menu-icon fl"><i class="fa fa-bars"></i></li>
+    </div>
+  
+      <div class = "head_right">
+       <div class="head_right_inner">
+        <ul class="unstyled">
+
+          {% if settings.display_search %}
+          <li class="search-field">
+          {%include 'search-box'%} 
+          </li>
+          {% endif %}
+          
+          
+                        {% assign gift_wrapped = 0 %}
+{% for item in cart.items %}
+  {% if item.product.handle == 'gift-wrap' %}
+    {% assign gift_wrapped = item.quantity %}
+  {% endif %}
+{% endfor %}
+          
+          <li id="cart-target" class="toolbar-cart {% if cart.item_count != 0 %}has-items{% endif %}">
+            <a href="/cart" class="cart" title="Shopping Cart">
+              <span class="icon-cart"></span>
+              <span id="cart-count">{{ cart.item_count | minus: gift_wrapped }}</span>
+              
+
+
+              
+              
+              
+            </a>
+          </li>
+          
+
+        
+        </ul>
+        </div>
+        </div>
+    </div>
+      
+      <div id="header-bottom-part">
+          
+    <div class = "head_mid">
+       <!-- Begin navigation -->
+      {% if settings.logo_alignment == "center" %}
+
+        
+          <div class="logo">
+            {% if settings.use_logo %}
+            <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="Rosena Sammi" /></a></h1>
+            {% if template == 'index' %}
+            <h1 style="display:none"><a href="/"> Fresh Princess </a></h1>
+            {% endif %}
+            {% else %}
+            <h1><a href="/">Rosena Sammi</a></h1>
+            {% endif %}
+          </div>
+        
+        <section id="nav" class="">
+          <div class="main_menu">
+            <nav class="main">
+              {% include 'dropdown' %}
+            </nav> <!-- /.main -->
+          </div>
+        </section>
+
+      {% else %}
+
+        <div class="row" id="header">
+          <div class="span12 border-bottom nav-table">
+            <div class="nav-logo">
+              <div class="logo">
+                {% if settings.use_logo %}
+                <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" /></a></h1>
+                {% if template == 'index' %}
+                <h1 style="display:none"><a href="/">{{ shop.name }}</a></h1>
+                {% endif %}
+                {% else %}
+                <h1><a href="/">{{ shop.name }}</a></h1>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="nav-links">
+              <section id="nav">
+                <nav class="main">
+                  {% include 'dropdown' %}
+                </nav>
+                </section>
+            </div>
+          </div>
+          
+        </div>
+
+      {% endif %}
+      <!-- End navigation -->
+
+    </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+<!--
+<div class="nonsticky">
+ 
+<div class="toolbar clearfix">
+   <div class="shrink-left"> 
+       <div class="logo" id="scroll-logo">
+            {% if settings.use_logo %}
+            <h1><a href="/"><img src="{{ 'logo.png' | asset_url }}" alt="Rosena Sammi" /></a></h1>
+            {% if template == 'index' %}
+            <h1 style="display:none"><a href="/"> Fresh Princess</a></h1>
+            {% endif %}
+            {% else %}
+            <h1><a href="/">Rosena Sammi</a></h1>
+            {% endif %}
+          </div>
+      <div class="nav-links" id="scroll-menu">
+              <section id="nav">
+                <nav class="main">
+                  {% include 'dropdown' %}
+                </nav>
+                </section>
+            </div>
+    
+  </div>
+<div class="shrink-right"> 
+        <div class = "head_right">
+       <div class="head_right_inner">
+        <ul class="unstyled">
+
+          {% if settings.display_search %}
+          <li class="search-field">
+          {%include 'search-box'%} 
+          </li>
+          {% endif %}
+          
+          
+                        {% assign gift_wrapped = 0 %}
+{% for item in cart.items %}
+  {% if item.product.handle == 'gift-wrap' %}
+    {% assign gift_wrapped = item.quantity %}
+  {% endif %}
+{% endfor %}
+          
+          <li id="cart-target" class="toolbar-cart {% if cart.item_count != 0 %}has-items{% endif %}">
+            <a href="/cart" class="cart" title="Shopping Cart">
+              <span class="icon-cart"></span>
+              <span id="cart-count">{{ cart.item_count | minus: gift_wrapped }}</span>
+              
+
+
+              
+              
+              
+            </a>
+          </li>
+          
+
+        
+        </ul>
+        </div>
+        </div>
+  </div> 
+</div>
+
+</div> -->
+   
+
+  <!-- End toolbar -->
+
+  <!-- Begin Mobile Nav -->
+  <div class="row mobile-nav-wrapper">
+    <nav class="mobile clearfix">
+      {% include 'mobile-menu' %}
+    </nav>
+  </div>
+  <!-- End Mobile Nav -->
+

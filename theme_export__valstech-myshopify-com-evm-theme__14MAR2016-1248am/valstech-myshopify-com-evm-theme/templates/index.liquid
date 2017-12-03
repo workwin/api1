@@ -1,0 +1,106 @@
+{%include 'slider'%}
+<div class="full_width">
+ <div class="fixed_width">
+   <div id="shadow_bg">
+     
+   </div>
+  </div>
+</div>
+<div id="homepage_top_section" class="full_width">
+  <div class="homepage_content clearfix">
+    <div class="fixed_width">
+      
+        <div class="section clearfix">
+          {{ pages[settings.homepage].content }}
+        
+      </div>
+    </div>
+  </div>
+<div class="homepage_product_section">
+<div class="fixed_width">
+
+<div class="homepage_product_left">
+  <div class="left_slider_heading">Available in  
+    <a href="#color-popup" class="my_images">
+ <img src="{{'question-mark.png' | asset_url}}" alt=""  width="14"/></a>
+    
+    
+      <div id="color-popup" style="display:none;">
+  
+    <span class="comments"><b>Personalized colors are available for orders of larger quantities. For more information, please send your request to:
+
+      <a href="mailto:info@valstech.com"> info@valstech.com   </a>  <br/>
+      subject: Custom Colors</b></span>
+   
+  </div>
+
+  </div>
+  <div class="homepage_image_responsive">
+ <img src="{{'LENZO_YELLOW.jpg' | asset_url}}" />
+     <img src="{{'LENZO_BLACK.jpg' | asset_url}}" />
+  </div>
+  {%include 'homepage-image-slider'%}
+</div>
+  
+<div class="homepage_product_right">{%include 'home-page-product-slider'%}</div>  
+</div>
+</div> 
+</div>
+<!--
+<div class="full_width" id="video_section">
+<div class="fixed_width">
+<iframe src="https://player.vimeo.com/video/155196885"  width="1920" height="1080" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+  </div>
+</div>
+
+<div class="full_width" id="homepage_image_section">
+<div class="fixed_width">
+
+Designing and building the most advanced underwater housings for your iPhone.
+  
+  <div class="homepage_lezo_img">
+    <img src="{{'lezo-two-img.jpg' | asset_url}}" />
+  </div>
+ </div>
+</div> -->
+
+<div class="full_width" id="home_blue_section">
+<div class="fixed_width">
+  <div class="home_blue_left">All LenzO™ housings are depth rated and tested to 100 meters.</div>
+  <div class="read-more home_blue_right"><div class="home_blue_right_inner">
+    <a href="/pages/lenzo-housings">Read More</a></div></div>
+</div>
+</div>
+<div class="full_width" id="homepage_product_section">
+<div class="fixed_width">
+<h2> The LenzO™ Delivers High Quality Images And Next Generation Features </h2>
+{%include 'homepage-products'%}
+</div>
+</div>
+<div id="homepage_bottom_section" class="full_width">
+{% if settings.instagram_widget %}
+<div class="fixed_width">
+      <h4 class="title">
+        {% if settings.instagram_link != blank %}
+          <a href="{{ settings.instagram_link }}" target="_blank">
+        {% endif %}
+        {{ settings.instagram_title }}
+        {% if settings.instagram_link != blank %}
+          </a>
+        {% endif %}
+      </h4>
+ 
+    
+    <div id="instafeed" data-username="{{ settings.instagram_username | downcase }}" data-client-id="{{ settings.instagram_client_id }}" data-count="{{ settings.instagram_count }}"></div>
+   </div>
+{% endif %}
+  
+</div>
+
+
+
+
+<script>
+  $("a.my_images").fancybox();
+</script>

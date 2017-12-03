@@ -1,0 +1,46 @@
+<div class="full_width" id="page">
+  <div class="fixed_width">
+  <h2 class="page_title">
+    {{ page.title }}
+  </h2>
+
+<ul class="slides" id="gallery_thumbs">
+        {% for i in (1..32) %}
+          {% capture show_image%}gallery_image_show_{{ i }}{% endcapture %}
+          {% capture image %}gallery_image_{{ i }}.jpg{% endcapture %}
+          {% capture photographer %}photographer_name_{{ i }}{% endcapture %}
+          {% capture type %}camera_type_{{ i }}{% endcapture %}
+          {% capture housing %}model_of_housing_{{ i }}{% endcapture %}
+          {% capture note %}image_note_{{ i }}{% endcapture %}
+           {% capture location %}image_location_{{ i }}{% endcapture %}
+          {% if settings[show_image] %}
+<li>
+
+   <a class="gallery_image" href="#gallery_description_{{i}}">
+     <img src="{{ image | asset_url }}" /></a>
+ 
+<div class="gallery_desc" id="gallery_description_{{i}}" style="display:none;"> 
+  <div class="gallery_img">   <img src="{{ image | asset_url }}" /></div>
+   <span class="photographer_name"><strong>Photo by</strong> :{{ settings[photographer]}}</span>
+       <span class="model_housing"> {{ settings[housing]}}</span> 
+  <span class="cam_type">{{ settings[type]}}</span>
+  <span class="location"><strong>Location</strong> :{{ settings[location]}}</span>
+    <span class="img_note"> {{ settings[note]}}</span>
+</div>
+</li>
+          {% endif %}
+        {% endfor %} 
+  
+  
+  </ul>
+
+
+
+
+<script>
+  $("a.gallery_image").fancybox();
+</script>
+
+  </div>
+</div>
+

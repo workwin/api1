@@ -1,0 +1,175 @@
+{% if settings.slideshow_enabled %}
+  {% if settings.slideshow_width_narrow %}
+
+    <div class="fixed_width main content"> 
+   <div class="sixteen columns">
+  {% else %}
+    </div>
+  {% endif %}
+  
+  {% capture video_slide %}
+    {% if settings.video_embed != blank %}
+      {% if settings.video_width == 'set' %}
+        <li>
+          <div class="video-wrapper" style="width: {{ settings.video_width_px }}px; margin: 0 auto;">
+            <div class="slideshow-video-container">
+              {{ settings.video_embed }}
+            </div>
+          </div> 
+        </li>
+      {% else %}
+        <li>
+          <div class="slideshow-video-container">
+            {{ settings.video_embed }}
+          </div>
+        </li>
+      {% endif %}
+    {% endif %}
+  {% endcapture %}
+      
+    <div class="fixed_width" id="mobile_width">
+  <div id="homepage_slider" class="flexslider">
+
+    <ul class="slides">
+      {% if settings.video_position == '1' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_1_enabled %}
+	    	<li>
+	    		<a href="{{ settings.image_1_link }}"><img src="{{ 'slideshow_1.jpg' | asset_url }}" alt="{{ settings.image_1_alt_text | escape }}" /></a>
+	    		{% if settings.image_1_headline != blank or settings.image_1_subtitle != blank or settings.image_1_button_text != blank %}
+	    		  <div class="flex-caption">
+              <div class="fixed_width">
+                     <div class="fixed_width_inner">
+                <div class="columns">
+                  <h1 class="headline" style="color:{{settings.image_1_text_color}}">{{ settings.image_1_headline }}</h1>
+                  <p class="subtitle" style="color:{{settings.image_1_text_color}}">{{ settings.image_1_subtitle }}</p>
+                  {% if settings.image_1_button1_text != blank %}
+                  <div class="button_1">  <a href="{{ settings.button1_1_link }}" class="action_button" style="color:{{settings.image_1_text_color}}">
+                      {{ settings.image_1_button1_text }}
+                    </a></div>
+                  {% endif %}
+    {% if settings.image_1_button2_text != blank %}
+                   <div class="button_2">  <a href="{{ settings.button2_1_link }}" class="action_button" style="color:{{settings.image_1_text_color}}">
+                      {{ settings.image_1_button2_text }}
+                     </a></div>
+{% endif %}  
+                       </div>
+                </div>
+              </div>
+            </div>
+	    		{% endif %}
+	    	</li>
+	    {% endif %}
+      {% if settings.video_position == '2' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_2_enabled %}
+      	<li>
+      		<a href="{{ settings.image_2_link }}"><img src="{{ 'slideshow_2.jpg' | asset_url }}" alt="{{ settings.image_2_alt_text | escape }}" /></a>
+          {% if settings.image_2_headline != blank or settings.image_2_subtitle != blank or settings.image_2_button_text != blank %}
+            <div class="flex-caption">
+              <div class="fixed_width">
+                <div class="columns {% if settings.image_2_text_align == 'left' %} align_left sixteen {% elsif settings.image_2_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_2_text_color}}">{{ settings.image_2_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_2_text_color}}">{{ settings.image_2_subtitle }}</p>
+                  {% if settings.image_2_button_text != blank %}
+                    <a href="{{ settings.image_2_link }}" class="action_button" style="color:{{settings.image_2_text_color}}">
+                      {{ settings.image_2_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '3' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_3_enabled %}
+      	<li>
+      		<a href="{{ settings.image_3_link }}"><img src="{{ 'slideshow_3.jpg' | asset_url }}" alt="{{ settings.image_3_alt_text | escape }}" /></a>
+          {% if settings.image_3_headline != blank or settings.image_3_subtitle != blank or settings.image_3_button_text != blank %}
+            <div class="flex-caption">
+              <div class="fixed_width">
+                <div class="columns {% if settings.image_3_text_align == 'left' %} align_left sixteen {% elsif settings.image_3_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_3_text_color}}">{{ settings.image_3_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_3_text_color}}">{{ settings.image_3_subtitle }}</p>
+                  {% if settings.image_3_button_text != blank %}
+                    <a href="{{ settings.image_3_link }}" class="action_button" style="color:{{settings.image_3_text_color}}">
+                      {{ settings.image_3_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '4' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_4_enabled %}
+      	<li>
+      		<a href="{{ settings.image_4_link }}"><img src="{{ 'slideshow_4.jpg' | asset_url }}" alt="{{ settings.image_4_alt_text | escape }}" /></a>
+          {% if settings.image_4_headline != blank or settings.image_4_subtitle != blank or settings.image_4_button_text != blank %}
+            <div class="flex-caption">
+              <div class="fixed_width">
+                <div class="columns {% if settings.image_4_text_align == 'left' %} align_left sixteen {% elsif settings.image_4_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_4_text_color}}">{{ settings.image_4_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_4_text_color}}">{{ settings.image_4_subtitle }}</p>
+                  {% if settings.image_4_button_text != blank %}
+                    <a href="{{ settings.image_4_link }}" class="action_button" style="color:{{settings.image_4_text_color}}">
+                      {{ settings.image_4_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '5' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_5_enabled %}
+      	<li>
+      		<a href="{{ settings.image_5_link }}"><img src="{{ 'slideshow_5.jpg' | asset_url }}" alt="{{ settings.image_5_alt_text | escape }}" /></a>
+          {% if settings.image_5_headline != blank or settings.image_5_subtitle != blank or settings.image_5_button_text != blank %}
+            <div class="flex-caption">
+              <div class="fixed_width">
+                <div class="columns {% if settings.image_5_text_align == 'left' %} align_left sixteen {% elsif settings.image_5_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_5_text_color}}">{{ settings.image_5_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_5_text_color}}">{{ settings.image_5_subtitle }}</p>
+                  {% if settings.image_5_button_text != blank %}
+                    <a href="{{ settings.image_5_link }}" class="action_button" style="color:{{settings.image_5_text_color}}">
+                      {{ settings.image_5_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+      {% if settings.video_position == '6' %}{{ video_slide }}{% endif %}
+      {% if settings.slideshow_6_enabled %}
+      	<li>
+      		<a href="{{ settings.image_6_link }}"><img src="{{ 'slideshow_6.jpg' | asset_url }}" alt="{{ settings.image_6_alt_text | escape }}" /></a>
+          {% if settings.image_6_headline != blank or settings.image_6_subtitle != blank or settings.image_6_button_text != blank %}
+            <div class="flex-caption">
+              <div class="fixed_width">
+                <div class="fixed_width_inner">
+                <div class="columns {% if settings.image_6_text_align == 'left' %} align_left sixteen {% elsif settings.image_6_text_align == 'right' %} align_left seven offset-by-nine {% else %} sixteen {% endif %}">
+                  <p class="headline" style="color:{{settings.image_6_text_color}}">{{ settings.image_6_headline }}</p>
+                  <p class="subtitle" style="color:{{settings.image_6_text_color}}">{{ settings.image_6_subtitle }}</p>
+                  {% if settings.image_6_button_text != blank %}
+                    <a href="{{ settings.image_6_link }}" class="action_button" style="color:{{settings.image_6_text_color}}">
+                      {{ settings.image_6_button_text }}
+                    </a>
+                  {% endif %}
+                </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </li>
+      {% endif %}
+    </ul>
+    </div>
+	</div>
+</div>
+
+
+{% endif %}

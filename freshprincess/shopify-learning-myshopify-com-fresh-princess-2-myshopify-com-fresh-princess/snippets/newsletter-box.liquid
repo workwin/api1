@@ -1,0 +1,34 @@
+
+
+<div class="newsletter-box">
+<script type="text/javascript" language="javascript">
+function showHide() {
+    var ele = document.getElementById("newsletter-menu");
+    if(ele.style.display == "block") {
+            ele.style.display = "none";
+      }
+    else {
+        ele.style.display = "block"; 
+    }
+}
+
+</script>
+
+<div id="newsletter-icon"><img src="{{'mailbox.png' | asset_url}}" border="0" onClick="return showHide();"  />
+  </div>
+        <div id="newsletter-menu" style="display:none;">
+      
+      <ul class="mail_box"> 
+         <h4>JOIN THE MAILING LIST</h4>
+              <hr/>
+<em>Sign up for updates about new jewelry, exclusive news, and special sales.</em>
+              <form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+              <input type="email" value="" placeholder="{{ 'layout.footer.newsletter_email' | t }}" name="EMAIL" id="mail" />
+                <input type="submit" class="btn newsletter" value="Submit" name="subscribe" id="subscribe" />
+              </form>
+</ul>
+            
+  
+  
+  </div> 
+</div>
